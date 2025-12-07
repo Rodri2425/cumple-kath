@@ -1,1 +1,111 @@
-<H1>esto es un prueba</H1>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Cumpleaños Mejora</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Lora:ital@1&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+    <audio id="musica-cumple" loop>
+        <source src="sound/Butterfly_Waltz.mp3" type="audio/mpeg">
+    </audio>
+
+    <header class="hero-section">
+        <div class="hero-overlay"></div> <div class="hero-content">
+            <h1>¡Feliz Cumpleaños a mi Mejor Amiga!</h1>
+            <p class="subtitle">Bienvenida a tus 21 añitos (como pasa el tiempo) ✨</p>
+            
+            <button class="surprise-btn" onclick="celebrar()">
+                🎉 ¡Presióname! 🎉
+            </button>
+        </div>
+    </header>
+
+    <section class="dedication-container">
+        <div class="paper-note">
+            <h2>Para ti...</h2>
+            <p>
+                Aquí escribes tu mensaje bonito... (Pega aquí tu texto anterior)
+            </p>
+            <p class="signature">- Con mucho amor, Tu Nombre</p>
+        </div>
+    </section>
+
+    <section class="memories-container">
+        
+        <article class="memory-card">
+            <div class="photo-frame">
+                <img src="foto1.jpg" alt="Foto 1">
+                <div class="tape"></div>
+            </div>
+            <div class="memory-text">
+                <h3>Aquel viaje</h3>
+                <p>Descripción de la foto...</p>
+            </div>
+        </article>
+
+        <article class="memory-card reverse">
+            <div class="photo-frame">
+                <img src="foto2.jpg" alt="Foto 2">
+                <div class="tape"></div>
+            </div>
+            <div class="memory-text">
+                <h3>Locuras juntas</h3>
+                <p>Descripción de la foto...</p>
+            </div>
+        </article>
+
+        </section>
+
+    <footer>
+        <p>Hecho con ❤️ para celebrar tu vida</p>
+    </footer>
+
+    <script>
+        function celebrar() {
+            // 1. Lanzar Confeti
+            var duration = 3000; // 3 segundos de confeti
+            var end = Date.now() + duration;
+
+            (function frame() {
+                confetti({
+                    particleCount: 5,
+                    angle: 60,
+                    spread: 55,
+                    origin: { x: 0 },
+                    colors: ['#D2B48C', '#4A3B2A', '#FFF', '#FFD700'] // Confeti colores café/dorado
+                });
+                confetti({
+                    particleCount: 5,
+                    angle: 120,
+                    spread: 55,
+                    origin: { x: 1 },
+                    colors: ['#D2B48C', '#4A3B2A', '#FFF', '#FFD700']
+                });
+
+                if (Date.now() < end) {
+                    requestAnimationFrame(frame);
+                }
+            }());
+
+            // 2. Reproducir Música
+            var audio = document.getElementById("musica-cumple"); //de Brian Crain
+            audio.volume = 0.5; // Volumen al 50%
+            audio.play().catch(function(error) {
+                console.log("El navegador bloqueó la reproducción automática, intenta dar clic de nuevo.");
+            });
+            
+            // 3. Efecto visual en el botón
+            var boton = document.querySelector('.surprise-btn');
+            boton.innerHTML = "🎶 ¡A celebrar! 🎶";
+            boton.style.transform = "scale(1.1)";
+        }
+    </script>
+
+</body>
+</html>

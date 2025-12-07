@@ -1,0 +1,259 @@
+/* --- 1. VARIABLES DE COLOR (Paleta Café/Beige) --- */
+:root {
+    --bg-color: #FDFCF0;       /* Beige muy claro (crema) */
+    --text-color: #4A3B2A;     /* Café oscuro intenso (para leer bien) */
+    --accent-dark: #6F4E37;    /* Café tono café */
+    --accent-light: #D2B48C;   /* Café claro (tipo latte) */
+    --paper-color: #FFFDF5;    /* Blanco hueso para las notas */
+    --tape-color: #E6D7B9;     /* Color de la cinta adhesiva */
+    --gold: #FFD700;           /* Dorado para detalles */
+}
+
+/* --- 2. ESTILOS GENERALES --- */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Caveat', cursive; /* Fuente principal */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    font-size: 1.3rem; 
+    overflow-x: hidden; /* Evita scroll horizontal indeseado */
+}
+
+/* --- 3. ENCABEZADO MEJORADO (Estilo Periódico Vintage) --- */
+.hero-section {
+    position: relative;
+    /* IMPORTANTE: Busca la imagen dentro de la carpeta 'img' */
+    background-image: url('img/fondo-periodico.jpg'); 
+    background-color: rgba(111, 78, 55, 0.85); /* Tinte café sobre la foto */
+    background-blend-mode: multiply; /* Fusión de color y textura */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Efecto Parallax */
+    
+    min-height: 85vh; /* Ocupa casi toda la pantalla inicial */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    padding: 40px;
+    border: 3px solid rgba(255, 255, 255, 0.3); /* Borde sutil */
+    backdrop-filter: blur(2px); /* Pequeño desenfoque de fondo */
+    border-radius: 15px;
+}
+
+/* Título H1 Gigante */
+.hero-content h1 {
+    font-size: 7rem; /* Tamaño muy grande */
+    margin-bottom: 20px;
+    color: #FFFDF5;
+    text-shadow: 4px 4px 0px #4A3B2A; /* Sombra sólida retro */
+    line-height: 0.9;
+    transform: rotate(-2deg); /* Inclinación divertida */
+}
+
+.subtitle {
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--gold);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+    margin-bottom: 40px;
+}
+
+/* --- 4. BOTÓN SORPRESA --- */
+.surprise-btn {
+    background-color: #FFFDF5;
+    color: var(--text-color);
+    font-family: 'Caveat', cursive;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 15px 50px;
+    border: 2px dashed var(--text-color); /* Borde punteado */
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    outline: none;
+    margin-top: 10px;
+}
+
+.surprise-btn:hover {
+    background-color: var(--text-color);
+    color: #FFFDF5;
+    transform: scale(1.1) rotate(3deg);
+    border-style: solid;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.surprise-btn:active {
+    transform: scale(0.95);
+}
+
+/* --- 5. DEDICATORIA (EFECTO PAPEL) --- */
+.dedication-container {
+    padding: 4rem 20px;
+    display: flex;
+    justify-content: center;
+    background-image: radial-gradient(#D2B48C 1px, transparent 1px); /* Puntos sutiles de fondo */
+    background-size: 20px 20px;
+}
+
+.paper-note {
+    background-color: var(--paper-color);
+    padding: 3rem;
+    max-width: 700px;
+    box-shadow: 0 10px 25px rgba(74, 59, 42, 0.15);
+    border: 1px solid var(--accent-light);
+    transform: rotate(-1deg);
+    position: relative;
+}
+
+/* Cinta adhesiva superior (Pin) */
+.paper-note::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 35px;
+    background-color: var(--tape-color);
+    opacity: 0.8;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.paper-note h2 {
+    font-size: 3rem;
+    color: var(--accent-dark);
+    text-align: center;
+    margin-top: 0;
+}
+
+.signature {
+    text-align: right;
+    font-weight: bold;
+    margin-top: 2rem;
+    font-size: 1.5rem;
+}
+
+/* --- 6. GALERÍA DE RECUERDOS --- */
+.memories-container {
+    padding: 2rem 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.memory-card {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 6rem; /* Espacio entre recuerdos */
+    gap: 4rem;
+}
+
+/* Alternar orden foto-texto */
+.memory-card.reverse {
+    flex-direction: row-reverse;
+}
+
+/* Marco Polaroid */
+.photo-frame {
+    background-color: #fff;
+    padding: 15px 15px 60px 15px; /* Espacio inferior polaroid */
+    box-shadow: 5px 10px 20px rgba(0,0,0,0.15);
+    transform: rotate(2deg);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    width: 320px; /* Tamaño de la foto */
+    position: relative;
+    z-index: 1;
+}
+
+.photo-frame:hover {
+    transform: rotate(0deg) scale(1.05);
+    z-index: 10;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+}
+
+.photo-frame img {
+    width: 100%;
+    height: auto;
+    border: 1px solid #eee;
+    filter: sepia(15%) contrast(95%); /* Filtro vintage suave */
+    display: block;
+}
+
+/* Cinta adhesiva en las fotos */
+.tape {
+    position: absolute;
+    top: -12px;
+    right: 35%;
+    width: 90px;
+    height: 28px;
+    background-color: var(--tape-color);
+    opacity: 0.8;
+    transform: rotate(-3deg);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Texto de los recuerdos */
+.memory-text {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+}
+
+.memory-text h3 {
+    font-size: 3rem;
+    color: var(--accent-dark);
+    margin-bottom: 0.5rem;
+    border-bottom: 2px dashed var(--accent-light);
+    display: inline-block;
+}
+
+.memory-text p {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    text-align: justify;
+}
+
+/* --- 7. FOOTER --- */
+footer {
+    text-align: center;
+    padding: 3rem;
+    background-color: var(--accent-dark);
+    color: #fff;
+    margin-top: 4rem;
+    font-size: 1.2rem;
+}
+
+/* --- 8. RESPONSIVIDAD (Celulares) --- */
+@media (max-width: 768px) {
+    .hero-content h1 { 
+        font-size: 3.5rem; /* Ajuste para que quepa en pantalla pequeña */
+    }
+    .subtitle {
+        font-size: 1.5rem;
+    }
+    .memory-card, .memory-card.reverse {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+        margin-bottom: 4rem;
+    }
+    .photo-frame { 
+        transform: rotate(0deg); 
+        width: 85%; /* Foto más ancha en celular */
+    }
+    .memory-text p {
+        text-align: center;
+    }
+}
