@@ -1,38 +1,51 @@
 /* --- 1. VARIABLES DE COLOR (Paleta Café/Beige) --- */
 :root {
-    --bg-color: #FDFCF0;       /* Beige muy claro (crema) */
-    --text-color: #4A3B2A;     /* Café oscuro intenso (para leer bien) */
-    --accent-dark: #6F4E37;    /* Café tono café */
-    --accent-light: #D2B48C;   /* Café claro (tipo latte) */
-    --paper-color: #FFFDF5;    /* Blanco hueso para las notas */
-    --tape-color: #E6D7B9;     /* Color de la cinta adhesiva */
-    --gold: #FFD700;           /* Dorado para detalles */
+    --bg-color: #FDFCF0;
+    /* Beige muy claro (crema) */
+    --text-color: #4A3B2A;
+    /* Café oscuro intenso (para leer bien) */
+    --accent-dark: #6F4E37;
+    /* Café tono café */
+    --accent-light: #D2B48C;
+    /* Café claro (tipo latte) */
+    --paper-color: #FFFDF5;
+    /* Blanco hueso para las notas */
+    --tape-color: #E6D7B9;
+    /* Color de la cinta adhesiva */
+    --gold: #FFD700;
+    /* Dorado para detalles */
 }
 
 /* --- 2. ESTILOS GENERALES --- */
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
-    font-family: 'Caveat', cursive; /* Fuente principal */
+    font-family: 'Caveat', cursive;
+    /* Fuente principal */
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    font-size: 1.3rem; 
-    overflow-x: hidden; /* Evita scroll horizontal indeseado */
+    font-size: 1.3rem;
+    overflow-x: hidden;
+    /* Evita scroll horizontal indeseado */
 }
 
 /* --- 3. ENCABEZADO MEJORADO (Estilo Periódico Vintage) --- */
 .hero-section {
     position: relative;
     /* IMPORTANTE: Busca la imagen dentro de la carpeta 'img' */
-    background-image: url('img/fondo-periodico.jpg'); 
-    background-color: rgba(111, 78, 55, 0.85); /* Tinte café sobre la foto */
-    background-blend-mode: multiply; /* Fusión de color y textura */
+    background-image: url('img/fondo-periodico.jpg');
+    background-color: rgba(111, 78, 55, 0.85);
+    /* Tinte café sobre la foto */
+    background-blend-mode: multiply;
+    /* Fusión de color y textura */
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Efecto Parallax */
-    
-    min-height: 85vh; /* Ocupa casi toda la pantalla inicial */
+    background-attachment: fixed;
+    /* Efecto Parallax */
+
+    min-height: 85vh;
+    /* Ocupa casi toda la pantalla inicial */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -45,26 +58,31 @@ body {
     z-index: 2;
     max-width: 900px;
     padding: 40px;
-    border: 3px solid rgba(255, 255, 255, 0.3); /* Borde sutil */
-    backdrop-filter: blur(2px); /* Pequeño desenfoque de fondo */
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    /* Borde sutil */
+    backdrop-filter: blur(2px);
+    /* Pequeño desenfoque de fondo */
     border-radius: 15px;
 }
 
 /* Título H1 Gigante */
 .hero-content h1 {
-    font-size: 7rem; /* Tamaño muy grande */
+    font-size: 7rem;
+    /* Tamaño muy grande */
     margin-bottom: 20px;
     color: #FFFDF5;
-    text-shadow: 4px 4px 0px #4A3B2A; /* Sombra sólida retro */
+    text-shadow: 4px 4px 0px #4A3B2A;
+    /* Sombra sólida retro */
     line-height: 0.9;
-    transform: rotate(-2deg); /* Inclinación divertida */
+    transform: rotate(-2deg);
+    /* Inclinación divertida */
 }
 
 .subtitle {
     font-size: 2.5rem;
     font-weight: 400;
     color: var(--gold);
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
     margin-bottom: 40px;
 }
 
@@ -76,11 +94,12 @@ body {
     font-size: 2rem;
     font-weight: bold;
     padding: 15px 50px;
-    border: 2px dashed var(--text-color); /* Borde punteado */
+    border: 2px dashed var(--text-color);
+    /* Borde punteado */
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     outline: none;
     margin-top: 10px;
 }
@@ -90,7 +109,7 @@ body {
     color: #FFFDF5;
     transform: scale(1.1) rotate(3deg);
     border-style: solid;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 .surprise-btn:active {
@@ -102,7 +121,8 @@ body {
     padding: 4rem 20px;
     display: flex;
     justify-content: center;
-    background-image: radial-gradient(#D2B48C 1px, transparent 1px); /* Puntos sutiles de fondo */
+    background-image: radial-gradient(#D2B48C 1px, transparent 1px);
+    /* Puntos sutiles de fondo */
     background-size: 20px 20px;
 }
 
@@ -127,7 +147,7 @@ body {
     height: 35px;
     background-color: var(--tape-color);
     opacity: 0.8;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .paper-note h2 {
@@ -156,7 +176,8 @@ body {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    margin-bottom: 6rem; /* Espacio entre recuerdos */
+    margin-bottom: 6rem;
+    /* Espacio entre recuerdos */
     gap: 4rem;
 }
 
@@ -168,11 +189,13 @@ body {
 /* Marco Polaroid */
 .photo-frame {
     background-color: #fff;
-    padding: 15px 15px 60px 15px; /* Espacio inferior polaroid */
-    box-shadow: 5px 10px 20px rgba(0,0,0,0.15);
+    padding: 15px 15px 60px 15px;
+    /* Espacio inferior polaroid */
+    box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.15);
     transform: rotate(2deg);
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    width: 320px; /* Tamaño de la foto */
+    width: 320px;
+    /* Tamaño de la foto */
     position: relative;
     z-index: 1;
 }
@@ -180,14 +203,15 @@ body {
 .photo-frame:hover {
     transform: rotate(0deg) scale(1.05);
     z-index: 10;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
 }
 
 .photo-frame img {
     width: 100%;
     height: auto;
     border: 1px solid #eee;
-    filter: sepia(15%) contrast(95%); /* Filtro vintage suave */
+    filter: sepia(15%) contrast(95%);
+    /* Filtro vintage suave */
     display: block;
 }
 
@@ -201,7 +225,7 @@ body {
     background-color: var(--tape-color);
     opacity: 0.8;
     transform: rotate(-3deg);
-    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 /* Texto de los recuerdos */
@@ -237,23 +261,105 @@ footer {
 
 /* --- 8. RESPONSIVIDAD (Celulares) --- */
 @media (max-width: 768px) {
-    .hero-content h1 { 
-        font-size: 3.5rem; /* Ajuste para que quepa en pantalla pequeña */
+    .hero-content h1 {
+        font-size: 3.5rem;
+        /* Ajuste para que quepa en pantalla pequeña */
     }
+
     .subtitle {
         font-size: 1.5rem;
     }
-    .memory-card, .memory-card.reverse {
+
+    .memory-card,
+    .memory-card.reverse {
         flex-direction: column;
         text-align: center;
         gap: 2rem;
         margin-bottom: 4rem;
     }
-    .photo-frame { 
-        transform: rotate(0deg); 
-        width: 85%; /* Foto más ancha en celular */
+
+    .photo-frame {
+        transform: rotate(0deg);
+        width: 85%;
+        /* Foto más ancha en celular */
     }
+
     .memory-text p {
         text-align: center;
     }
+    
 }
+
+/* --- BOTONES FINALES --- */
+    .final-actions {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        /* Espacio entre botones */
+        margin-bottom: 3rem;
+        flex-wrap: wrap;
+    }
+
+    .aesthetic-btn {
+        background-color: var(--accent-light);
+        color: #fff;
+        font-family: 'Caveat', cursive;
+        font-size: 1.5rem;
+        padding: 10px 30px;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s, background-color 0.2s;
+    }
+
+    .aesthetic-btn:hover {
+        background-color: var(--accent-dark);
+        transform: translateY(-3px);
+    }
+
+    /* --- EFECTO MÁGICO DE TEXTO --- */
+    .overlay-hidden {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(74, 59, 42, 0.95);
+        /* Fondo café muy oscuro casi negro */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        /* Para que quede encima de todo */
+        opacity: 0;
+        pointer-events: none;
+        /* Para que no estorbe cuando está invisible */
+        transition: opacity 0.5s ease;
+    }
+
+    /* Clase para activar la visibilidad */
+    .overlay-visible {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    #typing-text {
+        font-family: 'Caveat', cursive;
+        font-size: 5rem;
+        /* Letra gigante */
+        color: #FFD700;
+        /* DORADO */
+        text-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+        /* Resplandor dorado */
+        text-align: center;
+        margin: 0;
+        padding: 20px;
+    }
+
+    /* Ajuste texto mágico en celular */
+    @media (max-width: 768px) {
+        #typing-text {
+            font-size: 3rem;
+        }
+    }
